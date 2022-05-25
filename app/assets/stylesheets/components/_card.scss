@@ -71,6 +71,18 @@ body {
 
 }
 
+.btn-card{
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.btn-card:hover{
+  text-decoration:  underline rgb(255, 144, 125);
+  color: black;
+}
 
 .card-trip{
   border-radius: 10px;
