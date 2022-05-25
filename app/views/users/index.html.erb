@@ -1,4 +1,42 @@
-<h1>Users</h1>
-<% @users.each do |user| %>
-  <p><%= user.first_name %></p>
-<% end %>
+<div class="cont">
+      <div class="logo">
+        <%=  image_tag "logo.png", class:"img-logo", alt:""%>
+      </div>
+      <div class="product-search">
+        <div class="search-element">
+          <label class="search-label">où ?</label>
+          <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
+        </div>
+        <div class="search-element">
+          <label class="search-label">Quand ?</label>
+          <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
+        </div>
+        <div class="search-element">
+          <label class="search-label">Avec qui ?</label>
+          <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
+        </div>
+        <a type="submit" class="search-button">Search</a>
+      </div>
+      <div class="nav-btn">
+      <a class="btn-ins">Inscription</a>
+      <a class="btn-connex">connexion</a>
+    </div>
+  </div>
+  <div class="cards">
+    <% @alumnis.each do |alumni| %>
+      <div class="card-trip">
+        <%=  image_tag "moi.JPG", class:"img-card", alt:""%>
+        <div class="card-trip-infos">
+          <div>
+           <h3><%= alumni.first_name %></h2>
+              <p><%= alumni.description %>/p>
+          </div>
+          <div class="price">
+            <h2 class="card-trip-pricing">2</h2>
+            <i class="fa-solid fa-beer-mug-empty"></i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
