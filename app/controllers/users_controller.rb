@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show]
 
   def show
+    @reviews = Reservation.where(provider: @user).map(&:reviews).flatten
   end
 
   def index

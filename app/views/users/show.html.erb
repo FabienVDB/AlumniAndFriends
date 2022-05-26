@@ -6,157 +6,59 @@
 <%#<%= @user.location %>
 <%#<%= @user.reward %>
 <div class="cont">
-      <div class="logo">
-        <%=  image_tag "logo.png", class:"img-logo", alt:""%>
-      </div>
-      <div class="product-search">
-        <div class="search-element">
-          <label class="search-label">où ?</label>
-          <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
-        </div>
-        <div class="search-element">
-          <label class="search-label">Quand ?</label>
-          <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
-        </div>
-        <div class="search-element">
-          <label class="search-label">Avec qui ?</label>
-          <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
-        </div>
-        <a type="submit" class="search-button">Search</a>
-      </div>
-        <div class="avatarshow">
-        <%=  image_tag "avatar.png", class:"avatar", alt:""%>
-        </div>
+  <div class="logo">
+    <%=  image_tag "logo.png", class:"img-logo", alt:""%>
+  </div>
+  <div class="product-search">
+    <div class="search-element">
+      <label class="search-label">où ?</label>
+      <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
     </div>
-    <div>
-      <div>
-			<div class="cardshow col-sm-6 offset-sm-3">
-        <%= image_tag "moi.JPG", class:"show-card", alt:""%>
-      </div>
-				<div class="details">
-					<div class="content">
-						<h1><%= @user.first_name %> <strong><%= @user.last_name %></strong></h1>
-						<p><%= @user.service %></p>
-					</div>
-				</div>
-			</div>
+    <div class="search-element">
+      <label class="search-label">Quand ?</label>
+      <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
     </div>
-  <h1 class="col-sm-6 offset-sm-3">Commentaire</h1>
-  <div class="commentary col-sm-6 offset-sm-3">
-    <p class="showreview"><%= @user.first_name %> :abcdefghijklmn</p>
-    <p class="showreview"><%= @user.first_name %> :abcdefghijklmn</p>
- <div class="container">
-      <div class="calendar">
-        <div class="front">
-          <div class="current-date">
-            <h1>Friday 15th</h1>
-            <h1>January 2016</h1>
-          </div>
-
-          <div class="current-month">
-            <ul class="week-days">
-              <li>MON</li>
-              <li>TUE</li>
-              <li>WED</li>
-              <li>THU</li>
-              <li>FRI</li>
-              <li>SAT</li>
-              <li>SUN</li>
-            </ul>
-
-            <div class="weeks">
-              <div class="first">
-                <span class="last-month">28</span>
-                <span class="last-month">29</span>
-                <span class="last-month">30</span>
-                <span class="last-month">31</span>
-                <span>01</span>
-                <span>02</span>
-                <span>03</span>
-              </div>
-
-              <div class="second">
-                <span>04</span>
-                <span>05</span>
-                <span class="event">06</span>
-                <span>07</span>
-                <span>08</span>
-                <span>09</span>
-                <span>10</span>
-              </div>
-
-              <div class="third">
-                <span>11</span>
-                <span>12</span>
-                <span>13</span>
-                <span>14</span>
-                <span class="active">15</span>
-                <span>16</span>
-                <span>17</span>
-              </div>
-
-              <div class="fourth">
-                <span>18</span>
-                <span>19</span>
-                <span>20</span>
-                <span>21</span>
-                <span>22</span>
-                <span>23</span>
-                <span>24</span>
-              </div>
-
-              <div class="fifth">
-                <span>25</span>
-                <span>26</span>
-                <span>27</span>
-                <span>28</span>
-                <span>29</span>
-                <span>30</span>
-                <span>31</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="back">
-          <input placeholder="What's the event?">
-          <div class="info">
-            <div class="date">
-              <p class="info-date">
-              Date: <span>Jan 15th, 2016</span>
-              </p>
-              <p class="info-time">
-                Time: <span>6:35 PM</span>
-              </p>
-            </div>
-            <div class="address">
-              <p>
-                Address: <span>129 W 81st St, New York, NY</span>
-              </p>
-            </div>
-            <div class="observations">
-              <p>
-                Observations: <span>Be there 15 minutes earlier</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="actions">
-            <button class="save">
-              Save <i class="ion-checkmark"></i>
-            </button>
-            <button class="dismiss">
-              Dismiss <i class="ion-android-close"></i>
-            </button>
-          </div>
-        </div>
-
-      </div>
+    <div class="search-element">
+      <label class="search-label">Avec qui ?</label>
+      <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
     </div>
-    <ul id="unordered"></ul>
+    <a type="submit" class="search-button">Search</a>
   </div>
   <div>
-  <button class="showbutton">Valider</button>
+    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn-ins" %>
   </div>
 </div>
-<script src="code.js"></script>
+
+<div class="container mt-5 col-sm-6 offset-sm-3">
+  <div class="card-trip mt-5">
+    <%= cl_image_tag @user.photo.key, class:"show-card", alt:""%>
+    <div class="card-trip-infos showdescription">
+      <div>
+        <h2><%= @user.first_name %> <strong><%= @user.last_name %></strong></h2>
+        <p><%= @user.service %></p>
+      </div>
+      <div>
+        <h2 class="card-trip-pricing"><i class="fa-solid fa-trophy"></i> <%= @user.reward %></h2>
+        <%# <%= link_to "Valider", user_reservations_path, class: "showbutton" %>
+        <a href="#" class="btn btn-primary showbutton">Valider</a> <%# Remplacer par la ligne du dessus%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form-wrapper dateform" style="width: 400px; margin: 0 auto;">
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Quand voulez-vous venir ?" %>
+      <%= f.button :submit,"Réserver", class: "btn btn-primary showbutton" %>
+    <% end %>
+  </div>
+</div>
+
+
+<h1 class="col-sm-6 offset-sm-3">Commentaires</h1>
+<div class="commentary col-sm-6 offset-sm-3">
+  <% @reviews.each do |review| %>
+    <p class="showreview"><%= @user.first_name %> <%= review.comment %></p>
+  <% end %>
+</div>
