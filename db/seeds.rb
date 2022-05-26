@@ -67,11 +67,17 @@ jonathan.photo.attach(io: file, filename: 'jonathan.jpg', content_type: 'image/p
 jonathan.save
 
 puts "Create reservation: provider: kalid, client: fabien, on 2022-05-30"
-Reservation.create!(provider: kalid, client: fabien, date: "2022-05-30")
+res1 = Reservation.create!(provider: kalid, client: fabien, date: "2022-05-30")
 puts "Create reservation: provider: kalid, client: kevin, on 2022-06-05"
-Reservation.create!(provider: kalid, client: kevin, date: "2022-06-05")
+res2 = Reservation.create!(provider: kalid, client: kevin, date: "2022-06-05")
 puts "Create reservation: provider: jonathan, client: fabien, on 2022-06-11"
-Reservation.create!(provider: jonathan, client: fabien, date: "2022-06-11")
+res3 = Reservation.create!(provider: jonathan, client: fabien, date: "2022-06-11")
 puts "Create reservation: provider: fabien, client: kevin, on 2022-06-15"
-Reservation.create!(provider: fabien, client: kevin, date: "2022-06-15")
+res4 = Reservation.create!(provider: fabien, client: kevin, date: "2022-06-15")
+
+puts "Create reviews"
+Review.create!(user: fabien, reservation: res1, rating: 5, comment: "Vraiment un super buddy")
+Review.create!(user: kevin, reservation: res2, rating: 4, comment: "Super sympa")
+Review.create!(user: fabien, reservation: res3, rating: 5, comment: "Exceptionnel")
+Review.create!(user: fabien, reservation: res4, rating: 4, comment: "Super")
 puts "Done"
