@@ -1,4 +1,10 @@
 .showbutton{
   background-color: rgb(255, 144, 125);
-  border: none
+  border: none;
+  font-family: 'Roboto', sans-serif;
+}
+.showbutton:hover{
+  background-color: rgb(255, 144, 125);
+  opacity: 0.5;
+
 }
