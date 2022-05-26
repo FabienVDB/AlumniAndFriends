@@ -1,0 +1,17 @@
+.commentary{
+  box-shadow: 6px 9px 10px 0px rgba(0,0,0,0.47);
+  height: 200px;
+  width: 800px;
+}
+#comment-box, #post {
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+}
+#post:hover{
+  cursor: pointer;
+}
+
+.showreview{
+  text-align: left;
+}
