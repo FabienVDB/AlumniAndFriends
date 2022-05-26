@@ -6,7 +6,7 @@ class Reservation < ApplicationRecord
 
   validates :date, presence: true
   validates :date, date: true
-  validates :date, date: { after: proc { Time.now } }
+  # validates :date, date: { after: proc { Time.now } }
 
   # validates :duration, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
