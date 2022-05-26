@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reservations, class_name: "Reservation", foreign_key: "client_id"
   has_many :services, class_name: "Reservation", foreign_key: "provider_id"
+  has_many :reviews
   has_one_attached :photo
 
   validates :first_name, presence: true

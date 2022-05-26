@@ -2,6 +2,8 @@ class Reservation < ApplicationRecord
   belongs_to :client, class_name: "User"
   belongs_to :provider, class_name: "User"
 
+  has_many :reviews
+
   validates :date, presence: true
   validates :date, date: true
   validates :date, date: { after: proc { Time.now } }
