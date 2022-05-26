@@ -1,20 +1,16 @@
-<%# <h1>Reservations</h1>
-<% @reservations.each do |reservation| %>
-  <%# <p><%= reservation.description %>
-<%# <% end %>
-
 <div class="cont">
   <div class="logo">
     <%= link_to root_path do %>
       <%=image_tag "logo.png", class:"img-logo", alt:""%>
     <% end %>
   </div>
+
     <div class="product-search">
       <div class="search-element">
         <label class="search-label">où ?</label>
         <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
       </div>
-        <div class="search-element">
+       <div class="search-element">
           <label class="search-label">Quand ?</label>
           <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
         </div>
@@ -40,15 +36,15 @@
                   <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                   <%= link_to "inscription", new_user_registration_path, method: :delete, class: "dropdown-item" %>
                 </div>
+
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
-
-  <div class="reservation-layout">
+</div>
+<div class="reservation-layout">
     <h1>Mes réservations</h1>
     <div class="pop-up">
       <i class="fa-solid fa-circle-check"></i>
