@@ -28,14 +28,25 @@
     </div>
 </div>
   <div class="reservation-layout">
-    <h1>Mes réservation</h1>
+    <h1>Mes réservations</h1>
     <div class="pop-up">
        <i class="fa-solid fa-circle-check"></i>
         <p>Félicitations ta réservation est confirmée</p>
     </div>
-      <h2>Prochaine réservation:</h2>
+      <h2>Prochaines réservations:</h2>
       <div class="card-reservation">
-     <p>Prochaine réservation avec <%= @reservation.provider.first_name%>le<%= @reservation.date %> sur <%= @reservation.provider.location %></p>
-
-     </div>
+       <div class="info-reservation">
+          <strong>prochaine réservation avec kalid</strong>
+          <p>Le 20/05/1996 sur bordeaux </p>
+          <a href="#" class="btn-reservation">annuler</a>
+        </div>
+      </div>
+       <h2>Anciennes réservations:</h2>
+      <div class="card-reservation">
+       <div class="info-reservation">
+          <strong> Anciennes avec kalid</strong>
+          <p>Le 20/05/1996 sur bordeaux </p>
+            <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
+        </div>
+      </div>
 </div>

@@ -1,7 +1,5 @@
 .reservation-layout{
-  background-color: aqua;
   width: 70%;
-  height: 600px;
   margin: 0 auto;
   text-align: center;
   margin-top: 100px;
@@ -9,10 +7,55 @@
 
 .pop-up{
   display: flex;
-  margin-left: 28%;
-  margin-top: 30px;
+  margin-left: 35%;
+  margin-top: 40px;
+
 }
 
 .reservation-layout h2{
-  margin-right: 40%;
+ margin-right: 22%;
+ margin-top: 50px;
+}
+
+.card-reservation{
+  width: 600px;
+  height: 160px;
+  margin-left: 22%;
+  padding-left: 0px;
+  border: 3px solid rgb(255, 144, 125);
+  margin-top: 20px;
+  padding-top: 30px;
+
+}
+
+.info-reservation{
+ width: 50%;
+ margin: 0 auto;
+}
+
+.btn-reservation{
+  text-decoration: none;
+  color: orange;
+  margin-top: 5px;
+  padding-top: 4px;
+}
+.btn-reservation:hover{
+  color: orange;
+  opacity: 0.5;
+  cursor: pointer;
+
+
+}
+
+.btn-comentaire{
+  text-decoration: none;
+  color: orange;
+  margin-top: 5px;
+  padding-top: 4px;
+}
+
+.btn-comentaire:hover{
+color: orange;
+opacity: 0.5;
+cursor: pointer;
 }
