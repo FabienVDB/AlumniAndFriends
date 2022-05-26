@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     resources :reservations, only: %i[index create]
   end
+
+  resources :reservations, only: :destroy
 end

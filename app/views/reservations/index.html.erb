@@ -60,7 +60,7 @@
           <div class="info-reservation">
             <strong>prochaine réservation avec <%= next_reservation.provider.first_name %></strong>
             <p>Le <%= next_reservation.date %> à <%= next_reservation.provider.location %> </p>
-            <a href="#" class="btn-reservation">annuler</a>
+            <%= link_to "annuler", reservation_path(next_reservation), method: :delete, data: { confirm: "Etes-vous sûr?" }, class: "btn-reservation" %>
           </div>
         </div>
         <% end %>
