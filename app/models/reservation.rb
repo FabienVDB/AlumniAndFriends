@@ -1,6 +1,6 @@
 class Reservation < ApplicationRecord
-  belongs_to :client, class_name: "User"
-  belongs_to :provider, class_name: "User"
+  belongs_to :client, class_name: "User", dependent: :destroy
+  belongs_to :provider, class_name: "User", dependent: :destroy
 
   has_many :reviews
 
