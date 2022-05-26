@@ -66,7 +66,7 @@
     <% @past_reservations.each do |past_reservation| %>
       <div class="card-reservation">
        <div class="info-reservation">
-        <strong> Anciennes avec <%= past_reservation.provider.first_name %>,</strong>
+        <strong> Ancienne réservation avec <%= past_reservation.provider.first_name %>,</strong>
         <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
         <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
         </div>
