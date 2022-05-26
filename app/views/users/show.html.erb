@@ -1,3 +1,54 @@
-<h1>User show</h1>
+<%#<h1>User show</h1>
 <p><%= @user.first_name %></p>
-<p><%= @user.description %></p>
+<%#<%= @user.last_name %>
+<%#<p><%= @user.description %></p>
+
+<%#<%= @user.location %>
+<%#<%= @user.reward %>
+<div class="cont">
+      <div class="logo">
+        <%=  image_tag "logo.png", class:"img-logo", alt:""%>
+      </div>
+      <div class="product-search">
+        <div class="search-element">
+          <label class="search-label">où ?</label>
+          <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
+        </div>
+        <div class="search-element">
+          <label class="search-label">Quand ?</label>
+          <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
+        </div>
+        <div class="search-element">
+          <label class="search-label">Avec qui ?</label>
+          <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
+        </div>
+        <a type="submit" class="search-button">Search</a>
+      </div>
+        <div class="avatarshow">
+        <%=  image_tag "avatar.png", class:"avatar", alt:""%>
+        </div>
+    </div>
+    <div>
+      <div>
+			<div class="cardshow col-sm-6 offset-sm-3">
+        <%= image_tag "moi.JPG", class:"show-card", alt:""%>
+      </div>
+				<div class="details">
+					<div class="content">
+						<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+						<p><%= @user.description %></p>
+					</div>
+				</div>
+			</div>
+    </div>
+  <h1 class="col-sm-6 offset-sm-3">Commentaire</h1>
+  <div class="commentary col-sm-6 offset-sm-3">
+    <input type="text" id="comment-box" placeholder="Enter comment">
+    <button id="post">Post</button>
+    <ul id="unordered"></ul>
+  </div>
+  <div>
+  <button class="showbutton">Valider</button>
+  </div>
+</div>
+<script src="code.js"></script>
