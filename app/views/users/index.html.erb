@@ -24,13 +24,13 @@
     </div>
   </div>
   <div class="cards">
-    <% @alumnis.each do |alumni| %>
+    <% @users.each do |user| %>
       <div class="card-trip">
-        <%=  image_tag "moi.JPG", class:"img-card", alt:""%>
+        <%=  cl_image_tag user.photo.key, class:"img-card", alt:""%>
         <div class="card-trip-infos">
           <div>
-           <h3><%= alumni.first_name %></h2>
-              <p><%= alumni.description %>
+           <h3><%= user.first_name %></h2>
+              <p><%= user.service %>
           </div>
           <div class="price">
             <h2 class="card-trip-pricing">2</h2>

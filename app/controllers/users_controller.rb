@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @alumnis = User.where(alumni: true)
+    @users = User.all
   end
 
   def set_user
