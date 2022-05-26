@@ -16,7 +16,7 @@ Review.destroy_all if Rails.env.development?
 
 puts "Create fabien"
 fabien = User.new(email: "fabvdb@hotmail.com",
-                  password: "fabien_secret",
+                  password: "secret",
                   first_name: "Fabien",
                   last_name: "VAN DEN BERG",
                   phone_number: "0645210239",
@@ -29,7 +29,7 @@ fabien.save
 
 puts "Create kalid"
 kalid = User.new(email: "zanounekalid@.com",
-                 password: "kalid_secret",
+                 password: "secret",
                  first_name: "Kalid",
                  last_name: "ZANOUNE",
                  phone_number: "0623154496",
@@ -42,7 +42,7 @@ kalid.save
 
 puts "Create kevin"
 kevin = User.new(email: "herezy2006@gmail.com",
-                 password: "kevin_secret",
+                 password: "secret",
                  first_name: "Kevin",
                  last_name: "HANG",
                  phone_number: "0659763106",
@@ -55,7 +55,7 @@ kevin.save
 
 puts "Create jonathan"
 jonathan = User.new(email: "jonathan.serafini@lewagon.org",
-                    password: "jonathan_secret",
+                    password: "secret",
                     first_name: "Jonathan",
                     last_name: "SERAFINI",
                     phone_number: "0123456789",
