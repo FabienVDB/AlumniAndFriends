@@ -35,7 +35,7 @@ kalid = User.new(email: "zanounekalid@.com",
                  phone_number: "0623154496",
                  service: "Je peux être un super buddy",
                  location: "77 rue de la course Bordeaux",
-                 reward: "5 shots de whisky")
+                 reward: "5 shots")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/kalid_nplkdy.jpg')
 kalid.photo.attach(io: file, filename: 'kalid.jpg', content_type: 'image/png')
 kalid.save
@@ -48,7 +48,7 @@ kevin = User.new(email: "herezy2006@gmail.com",
                  phone_number: "0659763106",
                  service: "Je peux donner des cours de surf et de natation",
                  location: "Quai des Chartrons Bordeaux",
-                 reward: "2 cocktails surf sider")
+                 reward: "2 cocktails")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Kevin_i2wuht.jpg')
 kevin.photo.attach(io: file, filename: 'Kevin.jpg', content_type: 'image/png')
 kevin.save
