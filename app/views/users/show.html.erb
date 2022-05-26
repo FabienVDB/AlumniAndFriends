@@ -1,33 +1,27 @@
-<%#<h1>User show</h1>
-<p><%= @user.first_name %></p>
-<%#<%= @user.last_name %>
-<%#<p><%= @user.description %></p>
 
-<%#<%= @user.location %>
-<%#<%= @user.reward %>
 <div class="cont">
   <div class="logo">
-    <%=link_to root_path do %>
-      <%=image_tag "logo.png", class:"img-logo", alt:""%>
-    <% end %>
+      <%=link_to root_path do %>
+        <%=image_tag "logo.png", class:"img-logo", alt:""%>
+      <% end %>
   </div>
-  <div class="product-search">
-    <div class="search-element">
-      <label class="search-label">où ?</label>
-      <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
+    <div class="product-search">
+      <div class="search-element">
+        <label class="search-label">où ?</label>
+        <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
+      </div>
+      <div class="search-element">
+        <label class="search-label">Quand ?</label>
+        <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
+      </div>
+      <div class="search-element">
+        <label class="search-label">Avec qui ?</label>
+        <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
     </div>
-    <div class="search-element">
-      <label class="search-label">Quand ?</label>
-      <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
-    </div>
-    <div class="search-element">
-      <label class="search-label">Avec qui ?</label>
-      <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
+    <a type="submit" class="search-button">Search</a>
   </div>
-  <a type="submit" class="search-button">Search</a>
-</div>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
 
     <% end %>
