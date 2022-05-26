@@ -16,4 +16,11 @@ class ReservationsController < ApplicationController
       redirect_to user_path(@reservation.provider)
     end
   end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+
+    redirect_to user_reservations_path(@reservation.client)
+  end
 end
