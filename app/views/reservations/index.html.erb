@@ -2,9 +2,12 @@
 <% @reservations.each do |reservation| %>
   <%# <p><%= reservation.description %>
 <%# <% end %>
+
 <div class="cont">
       <div class="logo">
-        <%=  image_tag "logo.png", class:"img-logo", alt:""%>
+        <%= link_to root_path do %>
+          <%=image_tag "logo.png", class:"img-logo", alt:""%>
+        <% end %>
       </div>
       <div class="product-search">
         <div class="search-element">
@@ -25,7 +28,7 @@
         <%= link_to "Connexion", new_user_session_path, class:"btn-connex" %>
         <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn-deco" %>
         <%= link_to "inscription", new_user_registration_path, method: :delete, class: "btn-ins" %>
-    </div>
+      </div>
 </div>
   <div class="reservation-layout">
     <h1>Mes réservations</h1>
@@ -33,20 +36,26 @@
       <i class="fa-solid fa-circle-check"></i>
       <p>Félicitations ta réservation est confirmée</p>
     </div>
-      <h2>Prochaines réservations:</h2>
+        <h2>Prochaines réservations:</h2>
+        <% @next_reservations.each do |next_reservation| %>
+         <div class="card-reservation">
+          <div class="info-reservation">
+            <strong>prochaine réservation avec <%= next_reservation.provider.first_name %></strong>
+            <p>Le <%= next_reservation.date %> à <%= next_reservation.provider.location %> </p>
+            <a href="#" class="btn-reservation">annuler</a>
+          </div>
+        </div>
+        <% end %>
+
+
+      <h2>Anciennes réservations:</h2>
+    <% @past_reservations.each do |past_reservation| %>
       <div class="card-reservation">
        <div class="info-reservation">
-          <strong>prochaine réservation avec kalid</strong>
-          <p>Le 20/05/1996 sur bordeaux </p>
-          <a href="#" class="btn-reservation">annuler</a>
+        <strong> Anciennes avec <%= past_reservation.provider.first_name %>,</strong>
+        <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
+        <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
         </div>
       </div>
-       <h2>Anciennes réservations:</h2>
-      <div class="card-reservation">
-       <div class="info-reservation">
-          <strong> Anciennes avec kalid</strong>
-          <p>Le 20/05/1996 sur bordeaux </p>
-            <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
-        </div>
-      </div>
+    <% end %>
 </div>
