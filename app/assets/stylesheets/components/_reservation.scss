@@ -60,6 +60,14 @@ opacity: 0.5;
 cursor: pointer;
 }
 
-.past-provider{
-  color: black;
+.provider{
+  color: rgb(255, 144, 125);
+  cursor: pointer;
+}
+
+.provider:hover{
+color: rgb(255, 144, 125);
+cursor: pointer;
+opacity: 0.5;
+
 }
