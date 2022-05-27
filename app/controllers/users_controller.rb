@@ -10,11 +10,7 @@ class UsersController < ApplicationController
   def index
     if params[:provider].present?
       @users = User.search_by_first_name(params[:provider])
-    else
-      @users = User.all
-    end
-
-    if params[:location].present?
+    elsif params[:location].present?
       @users = User.near(params[:location])
     else
       @users = User.all

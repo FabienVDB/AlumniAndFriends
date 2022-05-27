@@ -1,14 +1,14 @@
 <div class="cards">
     <% @users.each do |user| %>
       <div class="card-trip">
-        <%=  cl_image_tag user.photo.key, class:"img-card", alt:""%>
+        <%=  cl_image_tag user.photo.key, class:"img-card", alt:"" %>
         <div class="card-trip-infos">
           <div>
            <h3><%= user.first_name %></h2>
               <p><%= user.service %>
               <br>
               <i class="fa-solid fa-trophy">:</i>
-              <h2 class="card-trip-pricing"><%=user.reward %></h2>
+              <h2 class="card-trip-pricing"><%= user.reward %></h2>
           </div>
             <%= link_to "viens!", user_path(user), class:"btn-card" %>
           </div>
