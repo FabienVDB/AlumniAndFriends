@@ -8,7 +8,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:provider].present?
+      @users = User.search_by_first_name(params[:provider])
+    else
+      @users = User.all
+    end
   end
 
   def set_user
