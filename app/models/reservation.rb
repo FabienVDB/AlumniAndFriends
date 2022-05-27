@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :client, class_name: "User"
   belongs_to :provider, class_name: "User"
 
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, dependent: :delete_all
 
   validates :date, presence: true
   validates :date, date: true
