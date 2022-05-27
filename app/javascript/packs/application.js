@@ -17,5 +17,7 @@ ActiveStorage.start()
 
 
 
+document.addEventListener('turbolinks:load', () => {
 
-initFlatpickr();
+  initFlatpickr();
+})

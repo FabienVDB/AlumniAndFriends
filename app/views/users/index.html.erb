@@ -1,6 +1,6 @@
 <div class="cont">
-  <div class="logo">
-    <%=link_to root_path do %>
+ <div class="logo">
+    <%= link_to root_path do %>
       <%=image_tag "logo.png", class:"img-logo", alt:""%>
     <% end %>
   </div>
@@ -31,9 +31,14 @@
                 <li class="nav-item dropdown">
                     <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
-                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                    <%= link_to "inscription", new_user_registration_path, method: :delete, class: "dropdown-item" %>
+                    <% if user_signed_in? %>
+                      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                      <%= link_to "Réservation", user_reservations_path(current_user), class: "dropdown-item" %>
+
+                    <% else %>
+                      <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
+                      <%= link_to "inscription", new_user_registration_path, class: "dropdown-item" %>
+                    <% end %>
                   </div>
                 </li>
               </ul>

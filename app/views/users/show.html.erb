@@ -34,9 +34,14 @@
             <li class="nav-item dropdown">
               <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
-                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                <%= link_to "inscription", new_user_registration_path, method: :delete, class: "dropdown-item" %>
+                <% if user_signed_in? %>
+                      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                      <%= link_to "Réservation", user_reservations_path(current_user), class: "dropdown-item" %>
+
+                    <% else %>
+                      <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
+                      <%= link_to "inscription", new_user_registration_path, class: "dropdown-item" %>
+                    <% end %>
               </div>
             </li>
         </ul>
@@ -57,7 +62,6 @@
         <h2 class="card-trip-pricing"><i class="fa-solid fa-trophy"></i>
         <%= @user.reward %>
         </h2>
-        <%# <%= link_to "Valider", user_reservations_path, class: "showbutton" %>
       </div>
     </div>
   </div>
@@ -76,6 +80,7 @@
 <h1 class="col-sm-6 offset-sm-3">Commentaires</h1>
 <div class="commentary col-sm-6 offset-sm-3">
   <% @reviews.each do |review| %>
-    <p class="showreview"><%= review.user.first_name %> <%= review.comment %></p>
+    <p class="showreview">Commentaire de <%= review.user.first_name %> : <%= review.comment %>
+    <br>Note de <%= review.rating%></p>
   <% end %>
 </div>
