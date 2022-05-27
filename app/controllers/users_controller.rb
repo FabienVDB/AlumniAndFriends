@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+
+    if params[:location].present?
+      @users = User.near(params[:location])
+    else
+      @users = User.all
+    end
   end
 
   def set_user
