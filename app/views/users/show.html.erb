@@ -1,20 +1,21 @@
-<div class="container cardshow col-sm-6 offset-sm-3">
-  <div class="card-trip">
-    <%= cl_image_tag @user.photo.key, class:"show-card", alt:""%>
+<div class="cardshow col-sm- offset-sm-4">
+
+  <div class="card-show">
+    <%= cl_image_tag @user.photo.key, class:"show-photo", alt:""%>
     <div class="card-show-infos">
-      <div >
+      <div class="service">
         <h2 class="showname"><%= @user.first_name %> <strong><%= @user.last_name %></strong></h2>
-        <p class="showp"><%= @user.service %></p>
+          <span class="showp"><%= @user.service %></span>
       </div>
       <div>
-        <h2 class="card-trip-pricing"><i class="fa-solid fa-trophy"></i>
-        <%= @user.reward %>
-        </h2>
+        <i class="fa-solid fa-trophy showicon"></i>
+        <h2 class="card-trip-pricing reward"><%= @user.reward %></h2>
       </div>
     </div>
   </div>
 </div>
-<div class="container dateform">
+
+<div class="container dateform col-sm- offset-sm-4">
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
     <%= simple_form_for [@user, @reservation], method: :post do |f| %>
       <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Quand voulez-vous réserver?" %>
@@ -23,12 +24,13 @@
   </div>
 </div>
 <% if @reviews.length != 0 %>
-  <h1 class="col-sm-6 offset-sm-3">Commentaires</h1>
-  <div class="modal"></div>
+
+  <h1 class="col-sm-4 offset-sm-5">Commentaires</h1>
+
   <div class="commentary col-sm-6 offset-sm-3">
     <% @reviews.each do |review| %>
       <p class="showreview">Commentaire de <%= review.user.first_name %> : <%= review.comment %>
-      <br>Note de <%= review.rating%></p>
+      <br><i class="fa-solid fa-star"></i> <%= review.rating%></p>
     <% end %>
   </div>
 <% end %>
