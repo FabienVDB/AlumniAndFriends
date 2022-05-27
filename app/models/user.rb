@@ -25,4 +25,9 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+  pg_search_scope :search_by_service,
+    against: [ :service],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
