@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def index
     if params[:provider].present?
       @users = User.search_by_first_name(params[:provider])
+    elsif params[:location].present? && params[:service].present?
+      @users = User.near(params[:location]).search_by_service(params[:service])
+    elsif params[:service].present?
+      @users = User.search_by_service(params[:service])
     elsif params[:location].present?
       @users = User.near(params[:location])
     else
