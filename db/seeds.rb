@@ -91,7 +91,7 @@ enor = User.new(email: "enor@lewagon.org",
                     reward: "Pour 10 bières!")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Enor_mf0ns7.png')
 enor.photo.attach(io: file, filename: 'enor.jpg', content_type: 'image/jpg')
-oceane.save
+enor.save
 
 farah = User.new(email: "farah@lewagon.org",
   password: "secret",
@@ -103,7 +103,7 @@ farah = User.new(email: "farah@lewagon.org",
   reward: "un saute mouton")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Farah_ej0v3d.jpg')
 farah.photo.attach(io: file, filename: 'farah.jpg', content_type: 'image/jpg')
-oceane.save
+farah.save
 
 puts "Create reservation: provider: kalid, client: fabien, on 2022-05-30"
 res1 = Reservation.create!(provider: kalid, client: fabien, date: "2022-05-30")
