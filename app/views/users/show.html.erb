@@ -1,40 +1,37 @@
 <div class="cont">
   <div class="logo">
-      <%=link_to root_path do %>
-        <%=image_tag "logo.png", class:"img-logo", alt:""%>
-      <% end %>
+    <%= link_to root_path do %>
+      <%=image_tag "logo.png", class:"img-logo", alt:""%>
+    <% end %>
   </div>
     <div class="product-search">
       <div class="search-element">
         <label class="search-label">où ?</label>
         <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
       </div>
-      <div class="search-element">
-        <label class="search-label">Quand ?</label>
-        <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
-      </div>
-      <div class="search-element">
-        <label class="search-label">Avec qui ?</label>
-        <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
-    </div>
-    <a type="submit" class="search-button">Search</a>
-  </div>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mt-5">
-            <li class="nav-item dropdown">
-              <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <% if user_signed_in? %>
+       <div class="search-element">
+          <label class="search-label">Quand ?</label>
+          <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
+        </div>
+          <div class="search-element">
+            <label class="search-label">Avec qui ?</label>
+            <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="location">
+          </div>
+          <a type="submit" class="search-button">Search</a>
+        </div>
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
+          <%= link_to "#", class: "navbar-brand" do %>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown">
+                <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                   <% if user_signed_in? %>
                       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                       <%= link_to "Réservation", user_reservations_path(current_user), class: "dropdown-item" %>
 
@@ -42,12 +39,14 @@
                       <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
                       <%= link_to "inscription", new_user_registration_path, class: "dropdown-item" %>
                     <% end %>
-              </div>
-            </li>
-        </ul>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 <div class="container mt-5 col-sm-6 offset-sm-3">
