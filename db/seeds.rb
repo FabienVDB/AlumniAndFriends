@@ -93,6 +93,18 @@ file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v16534
 enor.photo.attach(io: file, filename: 'enor.jpg', content_type: 'image/jpg')
 oceane.save
 
+farah = User.new(email: "farah@lewagon.org",
+  password: "secret",
+  first_name: "far",
+  last_name: "Belabbas",
+  phone_number: "0123456789",
+  service: "Un dentiste de qualité",
+  location: "Université Toulouse 1 Capitole, Rue du Doyen Gabriel Marty, Toulouse",
+  reward: "un saute mouton")
+file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Farah_ej0v3d.jpg')
+farah.photo.attach(io: file, filename: 'farah.jpg', content_type: 'image/jpg')
+oceane.save
+
 puts "Create reservation: provider: kalid, client: fabien, on 2022-05-30"
 res1 = Reservation.create!(provider: kalid, client: fabien, date: "2022-05-30")
 puts "Create reservation: provider: kalid, client: kevin, on 2022-06-05"
@@ -105,12 +117,15 @@ puts "Create reservation: provider: kalid, client: kevin, on 2022-06-15"
 res5 = Reservation.create!(provider: oceane, client: kevin, date: "2022-11-15")
 puts "Create reservation: provider: kalid, client: kevin, on 2022-06-15"
 res6 = Reservation.create!(provider: enor, client: kalid, date: "2022-11-15")
+puts "Create reservation: provider: kalid, client: kevin, on 2022-06-15"
+res7 = Reservation.create!(provider: farah, client: kalid, date: "2022-11-15")
 
 puts "Create reviews"
 Review.create!(user: fabien, reservation: res1, rating: 5, comment: "Vraiment un super buddy")
-Review.create!(user: kevin, reservation: res2, rating: 4, comment: "Super sympa")
+Review.create!(user: kevin, reservation: res2, rating: 4, comment: "Odeur étrange")
 Review.create!(user: fabien, reservation: res3, rating: 5, comment: "Exceptionnel")
 Review.create!(user: fabien, reservation: res4, rating: 4, comment: "Super")
 Review.create!(user: kevin, reservation: res5, rating: 4, comment: "Génial")
 Review.create!(user: kalid, reservation: res6, rating: 5, comment: "un moment étrange...")
+Review.create!(user: kalid, reservation: res7, rating: 5, comment: "top!")
 puts "Done"
