@@ -1,51 +1,49 @@
-%<div class="cont">
+
   <div class="logo">
     <%= link_to root_path do %>
       <%=image_tag "logo.png", class:"img-logo", alt:""%>
     <% end %>
   </div>
-    <%= simple_form_for users_path, method: :get do %>
+  <%= simple_form_for users_path, method: :get do %>
     <div class="product-search">
       <div class="search-element">
-        <label class="search-label">où ?</label>
-        <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="query">
+        <label class="search-label">Où ?</label>
+        <input class="search-input" type="text" autocomplete="on" placeholder="Bordeaux" name="location">
       </div>
       <div class="search-element">
         <label class="search-label">Quand ?</label>
-        <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="location">
+        <input class="search-input" type="text" placeholder="4 Juin" class="" autocomplete="on" name="datefrom">
       </div>
       <div class="search-element">
         <label class="search-label">Avec qui ?</label>
-        <input class="search-input" type="text" placeholder="kevin" class="" autocomplete="on" name="provider">
+        <input class="search-input" type="text" placeholder="Kevin" class="" autocomplete="on" name="provider">
       </div>
         <button type="submit" class="search-button">Rechercher</button>
     </div>
-    <% end%>
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid">
-          <%= link_to "#", class: "navbar-brand" do %>
-          <% end %>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item dropdown">
-                <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                   <% if user_signed_in? %>
-                      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                      <%= link_to " Mes réservations", user_reservations_path(current_user), class: "dropdown-item" %>
+  <% end %>
 
-                    <% else %>
-                      <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
-                      <%= link_to "inscription", new_user_registration_path, class: "dropdown-item" %>
-                    <% end %>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to "#", class: "navbar-brand" do %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <%= image_tag "image2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <% if user_signed_in? %>
+                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to " Mes réservations", user_reservations_path(current_user), class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
+                <%= link_to "inscription", new_user_registration_path, class: "dropdown-item" %>
+              <% end %>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-</div>
+  </div>
