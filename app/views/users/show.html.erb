@@ -81,3 +81,9 @@
     <% end %>
   </div>
 <% end %>
+
+<% @reviews.each do |review| %>
+   <div id="comment_<%= review.id %>">
+      <p><%= review.user. %></p>
+   </div>
+<% end %>
