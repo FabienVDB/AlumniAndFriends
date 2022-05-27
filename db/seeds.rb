@@ -21,7 +21,7 @@ fabien = User.new(email: "fabvdb@hotmail.com",
                   last_name: "VAN DEN BERG",
                   phone_number: "0645210239",
                   service: "Je peux t'aider à apprendre la musique",
-                  location: "Pessac",
+                  location: "60 avenue Pasteur Pessac",
                   reward: "2 bières")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Fabien_z6mqph.jpg')
 fabien.photo.attach(io: file, filename: 'Fabien.jpg', content_type: 'image/png')
@@ -34,7 +34,7 @@ kalid = User.new(email: "zanounekalid@.com",
                  last_name: "ZANOUNE",
                  phone_number: "0623154496",
                  service: "Je peux être un super buddy",
-                 location: "Marseille",
+                 location: "10 La canebière Marseille",
                  reward: "5 shots")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/kalid_nplkdy.jpg')
 kalid.photo.attach(io: file, filename: 'kalid.jpg', content_type: 'image/png')
@@ -47,7 +47,7 @@ kevin = User.new(email: "herezy2006@gmail.com",
                  last_name: "HANG",
                  phone_number: "0659763106",
                  service: "Je peux donner des cours de surf et de natation",
-                 location: "Paris",
+                 location: "15 rue de Rivoli Paris",
                  reward: "2 cocktails")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/Kevin_i2wuht.jpg')
 kevin.photo.attach(io: file, filename: 'Kevin.jpg', content_type: 'image/png')
@@ -60,7 +60,7 @@ jonathan = User.new(email: "jonathan.serafini@lewagon.org",
                     last_name: "SERAFINI",
                     phone_number: "0123456789",
                     service: "Je peux t'aider à coder en ruby",
-                    location: "Bordeaux",
+                    location: "107 cours Balguerie Stuttenberg Bordeaux",
                     reward: "Pour rien !")
 file = URI.open('https://res.cloudinary.com/alumniandfriends/image/upload/v1653473508/AlumniAndFriends/Photo%20AirBnb/jonathan_jftdnu.jpg')
 jonathan.photo.attach(io: file, filename: 'jonathan.jpg', content_type: 'image/png')
