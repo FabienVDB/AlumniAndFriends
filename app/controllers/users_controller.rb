@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+
+    @users = @users.select do |user|
+      user != current_user
+    end
   end
 
   def set_user
