@@ -1,19 +1,51 @@
 .cardshow{
   margin-top: 200px;
+  width: 40%;
+
 }
+
 .card-show-infos{
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100px;
   background-color: #F4F4F4;
+
+}
+
+.card-show > img{
+  width: 100%;
+  object-fit: cover;
 }
 
 .showname{
-font-size: 60px;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 .showp{
-  text-align: right;
+  padding-top: 200px;
+  font-size: 18px;
+  opacity: .7;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 250px;
 }
 
-.card-show-pricing{
-  margin-top: 500px;
+.showicon{
+  font-size: 18px;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.reward{
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  margin-left: 58px;
+  margin-top: 10px;
 }
