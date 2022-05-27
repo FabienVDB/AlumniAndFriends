@@ -45,31 +45,36 @@
     </div>
 </div>
 <div class="reservation-layout">
-    <h1>Mes réservations</h1>
-    <div class="pop-up">
-      <i class="fa-solid fa-circle-check"></i>
-      <p>Félicitations ta réservation est confirmée</p>
-    </div>
-        <h2>Prochaines réservations:</h2>
-        <% @next_reservations.each do |next_reservation| %>
-         <div class="card-reservation">
-          <div class="info-reservation">
-            <strong>prochaine réservation avec <%= next_reservation.provider.first_name %></strong>
-            <p>Le <%= next_reservation.date %> à <%= next_reservation.provider.location %> </p>
-            <%= link_to "annuler", reservation_path(next_reservation), method: :delete, data: { confirm: "Etes-vous sûr?" }, class: "btn-reservation" %>
-          </div>
-        </div>
-        <% end %>
-
-
-      <h2>Anciennes réservations:</h2>
-    <% @past_reservations.each do |past_reservation| %>
+  <h1>Mes réservations</h1>
+  <div class="pop-up">
+    <i class="fa-solid fa-circle-check"></i>
+    <p>Félicitations ta réservation est confirmée</p>
+  </div>
+  <h2>Prochaines réservations:</h2>
+    <% @next_reservations.each do |next_reservation| %>
       <div class="card-reservation">
-       <div class="info-reservation">
-        <strong> Anciennes avec <%= past_reservation.provider.first_name %>,</strong>
-        <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
-        <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
+        <div class="info-reservation">
+          <strong>prochaine réservation avec <%= next_reservation.provider.first_name %></strong>
+          <p>Le <%= next_reservation.date %> à <%= next_reservation.provider.location %> </p>
+          <%= link_to "annuler", reservation_path(next_reservation), method: :delete, data: { confirm: "Etes-vous sûr?" }, class: "btn-reservation" %>
         </div>
       </div>
     <% end %>
+
+  <h2>Anciennes réservations:</h2>
+  <% @past_reservations.each do |past_reservation| %>
+    <% review = Review.new %>
+    <div class="card-reservation">
+      <div class="info-reservation">
+        <strong> Ancienne réservation avec <%= past_reservation.provider.first_name %>,</strong>
+        <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
+        <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
+        <%= simple_form_for [@user, past_reservation, review] do |f| %>
+          <%= f.input :comment, label: "Commentaire" %>
+          <%= f.input :rating, label: "Note", as: :numeric , input_html: { min: '0', step: '1', max: '5', value: f.object.rating || '5' }%>
+          <%= f.button :submit, "Valider", class: 'btn btn-primary showbutton mb-3' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>

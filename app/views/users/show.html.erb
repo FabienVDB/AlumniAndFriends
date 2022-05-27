@@ -76,6 +76,6 @@
 <h1 class="col-sm-6 offset-sm-3">Commentaires</h1>
 <div class="commentary col-sm-6 offset-sm-3">
   <% @reviews.each do |review| %>
-    <p class="showreview"><%= @user.first_name %> <%= review.comment %></p>
+    <p class="showreview"><%= review.user.first_name %> <%= review.comment %></p>
   <% end %>
 </div>
