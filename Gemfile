@@ -26,6 +26,7 @@ gem 'date_validator'
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
+gem "geocoder"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -33,7 +34,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
-gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'cloudinary', '~> 1.16.0'
 
 

@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   has_many :reservations, class_name: "Reservation", foreign_key: "client_id"
   has_many :services, class_name: "Reservation", foreign_key: "provider_id"
   has_many :reviews
