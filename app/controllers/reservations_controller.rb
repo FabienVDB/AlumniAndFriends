@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
                                    provider: User.find(params[:user_id]),
                                    date: params['reservation']['date'])
     if @reservation.save
-      redirect_to user_reservations_path(@reservation.client)
+      redirect_to user_reservations_path(@reservation.client), notice: "flash"
     else
       redirect_to user_path(@reservation.provider)
     end
