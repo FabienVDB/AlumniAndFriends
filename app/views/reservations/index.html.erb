@@ -33,7 +33,7 @@
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                    <% if user_signed_in? %>
                       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                      <%= link_to "Réservation", user_reservations_path(current_user), class: "dropdown-item" %>
+                      <%= link_to " Mes réservations", user_reservations_path(current_user), class: "dropdown-item" %>
 
                     <% else %>
                       <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
@@ -66,20 +66,22 @@
 
   <h2>Anciennes réservations:</h2>
   <% @past_reservations.each do |past_reservation| %>
-    <% review = Review.new %>
-    <div class="card-reservation">
-      <div class="info-reservation">
-        <strong> Ancienne réservation avec <%= link_to(past_reservation.provider.first_name, user_path(past_reservation.provider))%>,</strong>
-        <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
-        <a href="#" class="btn-comentaire">Laisse un commentaire!</a>
-        <%= simple_form_for [@user, past_reservation, review] do |f| %>
-          <%= f.input :comment, label: "Commentaire" %>
-          <%= f.input :rating, label: "Note", as: :numeric , input_html: { min: '0', step: '1', max: '5', value: f.object.rating || '5' }%>
-          <%= f.button :submit, "Valider", class: 'btn btn-primary showbutton mb-3' %>
-        <% end %>
-      </div>
+    <div data-controller="comment">
+      <% review = Review.new %>
+        <div class="card-reservation">
+          <div class="info-reservation">
+            <strong> Ancienne réservation avec <%= link_to(past_reservation.provider.first_name, user_path(past_reservation.provider),class:"provider")%>,</strong>
+            <p>Le <%= past_reservation.date %> à <%= past_reservation.provider.location %></p>
+            <a data-action="click->comment#display" href="#" class="btn-comentaire">Laisse un commentaire!</a>
+              <div class="d-none" data-comment-target="displayed">
+                <%=  simple_form_for [@user, past_reservation, review] do |f| %>
+                  <%= f.input :comment, label: "Commentaire" %>
+                  <%= f.input :rating, label: "Note", as: :numeric , input_html: { min: '0', step: '1', max: '5', value: f.object.rating || '5' }%>
+                  <%= f.button :submit, "Valider", class: 'btn btn-primary showbutton mb-3' %>
+                <% end %>
+              </div>
+          </div>
+        </div>
     </div>
   <% end %>
 </div>
-<%# link_to(@appointment.patient.f_name + " " + @appointment.patient.l_name,
-        :controller => 'patients', :action => 'show', :id => @appointment.patient.id) %>
