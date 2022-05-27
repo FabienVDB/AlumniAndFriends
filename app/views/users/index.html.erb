@@ -33,7 +33,7 @@
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <% if user_signed_in? %>
                       <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                      <%= link_to "Réservation", user_reservations_path(current_user), class: "dropdown-item" %>
+                      <%= link_to " Mes réservations", user_reservations_path(current_user), class: "dropdown-item" %>
 
                     <% else %>
                       <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
