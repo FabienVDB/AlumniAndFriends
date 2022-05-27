@@ -15,4 +15,11 @@ class User < ApplicationRecord
 
   validates :phone_number, format: { with: /0[1-9]((\s|-?)\d{2}(\s|-?)){4}/ }
   validates :location, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name,
+    against: [ :first_name],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
